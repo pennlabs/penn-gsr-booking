@@ -1,0 +1,6 @@
+framework module Pods_GSRUITests {
+  umbrella header "Pods-GSRUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_GSRTests {
+  umbrella header "Pods-GSRTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
