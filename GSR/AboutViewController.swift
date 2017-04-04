@@ -8,11 +8,14 @@
 
 import UIKit
 
-class AboutViewController: UIViewController, ShowsAlert {
+class AboutViewController: GAITrackedViewController, ShowsAlert {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Set screen name.
+        self.screenName = "About Screen"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -44,7 +47,9 @@ class AboutViewController: UIViewController, ShowsAlert {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "email")
         defaults.removeObject(forKey: "password")
-        self.showAlert(withMsg: "You've successfuly reset your credentials. They are no longer stored on this device.", title: "Reset Credentials")
+        self.showAlert(withMsg: "You've successfuly reset your credentials. They are no longer stored on this device.", title: "Reset Credentials", completion: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 
     /*

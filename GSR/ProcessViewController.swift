@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProcessViewController: UIViewController {
+class ProcessViewController: GAITrackedViewController {
 
     @IBOutlet weak var statusLabel: UILabel!
     
@@ -34,6 +34,8 @@ class ProcessViewController: UIViewController {
             
             activityInd.startAnimating()
         })
+        
+        self.screenName = "Process Screen"
         
         let networkingManager = NetworkManager(email: email!, password: password!, gid: (location?.code)!, ids: ids!)
         

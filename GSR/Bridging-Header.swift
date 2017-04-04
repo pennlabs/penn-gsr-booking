@@ -1,10 +1,9 @@
 //
-//  GSR-Bridging-Header.h
+//  Bridging-Header.swift
 //  GSR
 //
 //  Created by Josh Doman on 4/3/17.
 //  Copyright © 2017 Yagil Burowski. All rights reserved.
 //
 
-#import <Google/Analytics.h>
-#import "GAITrackedViewController.h"
+import Foundation

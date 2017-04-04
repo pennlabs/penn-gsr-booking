@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CredentialsViewController: UIViewController {
+class CredentialsViewController: GAITrackedViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -22,6 +22,8 @@ class CredentialsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.becomeFirstResponder()
+        
+        self.screenName = "Login Screen"
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Google
+import FirebaseAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let gai = GAI.sharedInstance()
 //        gai?.trackUncaughtExceptions = true  // report uncaught exceptions
 //        gai?.logger.logLevel = GAILogLevel.none  // remove before app release
+        
+        // Configure tracker from GoogleService-Info.plist.
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        // Optional: configure GAI options.
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.verbose  // remove before app release
         
         return true
     }

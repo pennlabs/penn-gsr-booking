@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>TRACKING_ID</key>
-	<string>UA-81373618-2</string>
+	<string>UA-96660016-1</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.yagil.apps.GSR</string>
+	<string>org.pennlabs.apps.GSR</string>
 	<key>PROJECT_ID</key>
-	<string>firebase-gsrapp</string>
+	<string>bookit-45214</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -21,6 +21,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:810825719217:ios:8ddfdfa200d470fe</string>
+	<string>1:900132684513:ios:f89db8604875e383</string>
 </dict>
 </plist>

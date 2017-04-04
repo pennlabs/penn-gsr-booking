@@ -11,16 +11,20 @@ import UIKit
 protocol ShowsAlert {}
 
 extension ShowsAlert where Self: UIViewController {
-    func showAlert(withMsg: String, title: String = "Error") {
+    func showAlert(withMsg: String, title: String = "Error", completion: (() -> Void)?) {
         let alertController = UIAlertController(title: title, message: withMsg, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            if let completion = completion {
+                completion()
+            }
+        }))
         present(alertController, animated: true, completion: nil)
     }
 }
 
 protocol CollectionViewProtocol: UICollectionViewDelegate, UICollectionViewDataSource {}
 
-class BookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, ShowsAlert, CollectionViewProtocol {
+class BookViewController: GAITrackedViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, ShowsAlert, CollectionViewProtocol {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -53,6 +57,8 @@ class BookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if self.activityIndicator != nil {
             self.activityIndicator.startAnimating()
         }
+        
+        self.screenName = "Main Screen"
     }
 
     func track() {
@@ -184,7 +190,7 @@ class BookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             (res: AnyObject) in
             
             if (res is NSError) {
-                self.showAlert(withMsg: "Can't communicate with the server", title: "Oops")
+                self.showAlert(withMsg: "Can't communicate with the server", title: "Oops", completion: nil)
             } else {
                 DispatchQueue.main.async(execute: {
                     if self.activityIndicator != nil {
@@ -203,7 +209,7 @@ class BookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func submitSelection(_ sender: AnyObject) {
         if (validateSubmission() == false) {
-            showAlert(withMsg: "You can only choose consecutive times", title: "Can't do that.")
+            showAlert(withMsg: "You can only choose consecutive times", title: "Can't do that.", completion: nil)
         } else {
             let (email, password) = getEmailAndPassword()
             

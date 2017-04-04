@@ -100,7 +100,7 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     internal func validateChoice(_ collectionView: UICollectionView, indexPath: IndexPath) -> Bool{
         if (currentSelection!.count >= 4) {
-            showAlert(withMsg: "You can choose a maximum of 4 slots", title: "Can't do that.")
+            showAlert(withMsg: "You can choose a maximum of 4 slots", title: "Can't do that.", completion: nil)
             return false
         } else if (currentSelection!.count == 0) {
             return true
@@ -111,7 +111,7 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if (currentSelection?.contains(hour) == true) {
             handleSelection(collectionView, indexPath: indexPath, action: Selection.remove)
-            showAlert(withMsg: "You can only choose consecutive times", title: "Can't do that.")
+            showAlert(withMsg: "You can only choose consecutive times", title: "Can't do that.", completion: nil)
             return false
         }
         

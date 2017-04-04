@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21029D9E1E920C2600A6EF61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21029D9D1E920C2600A6EF61 /* GoogleService-Info.plist */; };
 		5468C57E359CF74C09B10646 /* Pods_GSRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2082E2F5C7B7860A9CB91216 /* Pods_GSRTests.framework */; };
 		7BC9626709809FCCE8D7EFCA /* Pods_GSRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D6DF6C0022F690920CAE60 /* Pods_GSRUITests.framework */; };
 		93B4887A99317E1D082A161A /* Pods_GSR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C2DE559C9C68DB12EE3818 /* Pods_GSR.framework */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		2082E2F5C7B7860A9CB91216 /* Pods_GSRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21029D9C1E9204FC00A6EF61 /* GSR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSR-Bridging-Header.h"; sourceTree = "<group>"; };
+		21029D9D1E920C2600A6EF61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		357BEE88672EBB43476C61F7 /* Pods-GSR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSR/Pods-GSR.debug.xcconfig"; sourceTree = "<group>"; };
 		65D6DF6C0022F690920CAE60 /* Pods_GSRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		763A7177D9EFB4200F63C118 /* Pods-GSRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSRUITests/Pods-GSRUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B6C8AB801D8B0CD200111AD9 /* AppDelegate.swift */,
+				21029D9C1E9204FC00A6EF61 /* GSR-Bridging-Header.h */,
 				B6C8AB841D8B0CD200111AD9 /* Main.storyboard */,
 				B610964B1D8DC3FB006EAA39 /* Custom Classes */,
 				B69201861D8B499A008CFB73 /* Model */,
@@ -222,6 +226,7 @@
 				B6C8AB8C1D8B0CD200111AD9 /* LaunchScreen.storyboard */,
 				B6C8AB8F1D8B0CD200111AD9 /* Info.plist */,
 				B6C8AB871D8B0CD200111AD9 /* GSR.xcdatamodeld */,
+				21029D9D1E920C2600A6EF61 /* GoogleService-Info.plist */,
 			);
 			path = GSR;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C8AB8E1D8B0CD200111AD9 /* LaunchScreen.storyboard in Resources */,
+				21029D9E1E920C2600A6EF61 /* GoogleService-Info.plist in Resources */,
 				B6C8AB8B1D8B0CD200111AD9 /* Assets.xcassets in Resources */,
 				B6C8AB861D8B0CD200111AD9 /* Main.storyboard in Resources */,
 			);
@@ -688,9 +694,11 @@
 				DEVELOPMENT_TEAM = GZC25U6WG3;
 				INFOPLIST_FILE = GSR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.yagil.apps.GSR;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pennlabs.apps.GSR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/joshdoman/Documents/Penn2016-2017/Penn_Labs/GSR-app-master/GSR/GSR-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GSR-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -705,9 +713,11 @@
 				DEVELOPMENT_TEAM = GZC25U6WG3;
 				INFOPLIST_FILE = GSR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.yagil.apps.GSR;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pennlabs.apps.GSR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/joshdoman/Documents/Penn2016-2017/Penn_Labs/GSR-app-master/GSR/GSR-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GSR-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -748,6 +758,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yagil.apps.GSRUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GSR-app-master/GSR/GSR-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GSR-Swift.h";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GSR;
 			};
@@ -761,6 +773,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yagil.apps.GSRUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GSR-app-master/GSR/GSR-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GSR-Swift.h";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GSR;
 			};
